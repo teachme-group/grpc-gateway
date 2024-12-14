@@ -1,4 +1,4 @@
-module gitlab.com/coinhubs/balance
+module github.com/teachme-group/web-bff
 
 go 1.23.2
 

@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	"gitlab.com/coinhubs/balance/internal/config"
+	"github.com/teachme-group/web-bff/internal/config"
 	"google.golang.org/grpc"
 )
 

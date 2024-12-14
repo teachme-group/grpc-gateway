@@ -5,8 +5,8 @@ import (
 	"os"
 
 	cfgLoader "github.com/Markuysa/pkg/config"
-	"gitlab.com/coinhubs/balance/internal/app"
-	"gitlab.com/coinhubs/balance/internal/config"
+	"github.com/teachme-group/web-bff/internal/app"
+	"github.com/teachme-group/web-bff/internal/config"
 )
 
 const (
