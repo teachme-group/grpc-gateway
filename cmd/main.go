@@ -1,12 +1,13 @@
 package main
 
 import (
+	"context"
 	"log"
 	"os"
 
 	cfgLoader "github.com/Markuysa/pkg/config"
-	"github.com/teachme-group/web-bff/internal/app"
-	"github.com/teachme-group/web-bff/internal/config"
+	"github.com/teachme-group/grpc-gateway/internal/app"
+	"github.com/teachme-group/grpc-gateway/internal/config"
 )
 
 const (
@@ -14,6 +15,7 @@ const (
 )
 
 func main() {
+	ctx := context.Background()
 	onBuild()
 
 	cfgPath := os.Getenv(cfgPathKey)
@@ -24,7 +26,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if err = app.Run(cfg); err != nil {
+	if err = app.Run(ctx, cfg); err != nil {
 		log.Fatal(err)
 	}
 }
