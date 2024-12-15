@@ -23,7 +23,7 @@ func Run(ctx context.Context, cfg *config.Config) error {
 		service.NewUserService(cfg.Services),
 	)
 
-	transport := http.New(registry)
+	transport := http.New(cfg.Probes, registry)
 
 	return transport.RegisterServicesAndRun(ctx)
 }
