@@ -9,6 +9,7 @@ import (
 	cfgLoader "github.com/Markuysa/pkg/config"
 	"github.com/Markuysa/pkg/consul"
 	logger "github.com/Markuysa/pkg/log"
+	"github.com/Markuysa/pkg/prober"
 	promLoager "github.com/Markuysa/pkg/prometheus"
 	"github.com/joho/godotenv"
 	"github.com/prometheus/client_golang/prometheus"
@@ -77,6 +78,11 @@ func registerAnalytics(cfg *config.Config) error {
 		return err
 	}
 	logger.Info("launched prometheus listener")
+
+	err = prober.LaunchProbes(cfg.Probes)
+	if err != nil {
+		return err
+	}
 
 	return nil
 }

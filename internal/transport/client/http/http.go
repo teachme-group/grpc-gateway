@@ -30,14 +30,6 @@ func (t *transport) RegisterServicesAndRun(ctx context.Context) error {
 		return err
 	}
 
-	http.HandleFunc(t.cfg.ReadinessPath, func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Ready"))
-	})
-
-	http.HandleFunc(t.cfg.LivenessPath, func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Alive"))
-	})
-
 	log.Info("http server started on :8000")
 
 	return http.ListenAndServe(":8000", t.mux)

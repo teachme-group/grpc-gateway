@@ -27,13 +27,13 @@ spec:
           readinessProbe:
             httpGet:
               path: /ready
-              port: 8000
+              port: 5050
             initialDelaySeconds: 5
             periodSeconds: 10
           livenessProbe:
             httpGet:
               path: /live
-              port: 8000
+              port: 5050
             initialDelaySeconds: 15
             periodSeconds: 20
           resources:
@@ -72,10 +72,10 @@ spec:
   selector:
     app: grpc-gateway
   ports:
-    - name: grpc
+    - name: http-health
       protocol: TCP
-      port: 5000
-      targetPort: 5000
+      port: 5050
+      targetPort: 5050
 
     - name: http
       protocol: TCP
