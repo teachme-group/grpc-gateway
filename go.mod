@@ -3,7 +3,7 @@ module github.com/teachme-group/grpc-gateway
 go 1.23.3
 
 require (
-	github.com/Markuysa/pkg v1.3.10
+	github.com/Markuysa/pkg v1.3.12
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.24.0
 	github.com/joho/godotenv v1.5.1
 	github.com/prometheus/client_golang v1.20.5
